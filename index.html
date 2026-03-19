@@ -1,17 +1,75 @@
 <!DOCTYPE html>
-<html lang="pt-pt">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LIGNUM | Restauro e Engenharia</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@200;400&display=swap" rel="stylesheet">
+    
     <style>
-        body { background-color: #F5F5F0; color: #1E2A22; font-family: 'serif'; text-align: center; padding: 50px; }
-        h1 { color: #C19A6B; letter-spacing: 5px; }
+        :root {
+            --lignum-green: #1E2A22;
+            --lignum-gold: #C19A6B;
+            --lignum-offwhite: #F5F5F0;
+        }
+
+        body { 
+            background-color: var(--lignum-offwhite);
+            color: var(--lignum-green);
+            font-family: 'Montserrat', sans-serif; 
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        h1 { 
+            font-family: 'Cinzel', serif; 
+            color: var(--lignum-gold);
+            font-size: clamp(2.5rem, 10vw, 5rem);
+            letter-spacing: 15px; /* Espaçamento de luxo editorial */
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            font-weight: 400;
+        }
+
+        p {
+            font-weight: 200;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            opacity: 0.8;
+            margin-top: 0;
+        }
+
+        .dev-tag {
+            margin-top: 60px;
+            font-size: 0.65rem;
+            letter-spacing: 3px;
+            color: var(--lignum-green);
+            opacity: 0.5;
+            text-transform: uppercase;
+            border-top: 1px solid var(--lignum-gold);
+            padding-top: 20px;
+            width: 280px;
+        }
     </style>
 </head>
 <body>
-    <h1>LIGNUM</h1>
-    <p>Preservando a Memória da Matéria.</p>
-    <p><i>Site em desenvolvimento por Ana Karina Carvalho</i></p>
+
+    <h1>Lignum</h1>
+    <p>Preservando a Memória da Matéria</p>
+    
+    <div class="dev-tag">
+        Desenvolvimento Institucional<br>
+        Ana Karina Carvalho
+    </div>
+
 </body>
 </html>
