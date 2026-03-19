@@ -1,51 +1,71 @@
-<!-- ===================== style.css ===================== -->
-  gap: 20px;
+/* ... (regras anteriores permanecem iguais) ... */
+
+.section-intro {
+    font-weight: 200;
+    max-width: 600px;
+    margin: -20px auto 60px auto;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    opacity: 0.8;
 }
 
-.card {
-  overflow: hidden;
-  position: relative;
+/* Container do Grid (Responsivo) */
+.grid-projetos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    width: 100%;
+    margin-top: 50px;
 }
 
-.card img {
-  width: 100%;
-  transition: 0.4s;
+/* Estilização do Card */
+.card-projeto {
+    background-color: transparent;
+    border: 1px solid rgba(193, 154, 107, 0.2); /* Borda Dourado Lignum suave */
+    transition: 0.4s;
+    text-align: left;
 }
 
-.card:hover img {
-  transform: scale(1.05);
+.card-projeto:hover {
+    border-color: var(--lignum-gold);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(30, 42, 34, 0.05); /* Sombra Verde Lignum suave */
 }
 
-.card span {
-  position: absolute;
-  bottom: 10px;
-  left: 10px;
-  color: white;
-  background: rgba(0,0,0,0.5);
-  padding: 5px 10px;
-  font-size: 0.9rem;
+/* O Espaço para a Imagem (Placeholder) */
+.placeholder-imagem {
+    width: 100%;
+    height: 250px; /* Proporção padrão para fotos arquitetônicas */
+    background-color: var(--lignum-green);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--lignum-offwhite);
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    opacity: 0.9;
+    padding: 20px;
 }
 
-.contact {
-  background: #0f2a1f;
-  color: white;
-  text-align: center;
+/* Informações do Card */
+.card-info {
+    padding: 25px 20px;
 }
 
-footer {
-  background: #111;
-  color: #aaa;
-  text-align: center;
-  padding: 20px;
-  font-size: 0.8rem;
+.card-info h3 {
+    font-family: 'Cinzel', serif;
+    color: var(--lignum-gold);
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+    font-weight: 400;
 }
 
-@media(max-width: 768px) {
-  .split {
-    flex-direction: column;
-  }
-
-  .hero h1 {
-    font-size: 2.5rem;
-  }
+.card-info p {
+    font-weight: 200;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    text-transform: none; /* Mantém o texto normal para descrição técnica */
+    opacity: 1;
 }
