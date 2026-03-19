@@ -1,118 +1,51 @@
-/* RESET */
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
+<!-- ===================== style.css ===================== -->
+  gap: 20px;
 }
 
-/* PALETA */
-:root {
-  --verde: #1f3d2b;
-  --verde-escuro: #162a1d;
-  --dourado: #c9a86a;
-  --bege: #f5f1e6;
+.card {
+  overflow: hidden;
+  position: relative;
 }
 
-/* HERO FULL WIDTH */
-.hero {
-  height: 100vh;
-  background: linear-gradient(rgba(22, 42, 29, 0.85), rgba(22, 42, 29, 0.85)),
-              url('img/madeira-fundo.jpg') center/cover no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 0 20px;
+.card img {
+  width: 100%;
+  transition: 0.4s;
 }
 
-.hero-content {
-  max-width: 900px;
-  color: var(--bege);
+.card:hover img {
+  transform: scale(1.05);
 }
 
-.hero h1 {
-  font-size: 48px;
-  font-family: 'Cinzel', serif;
-  color: var(--dourado);
-  margin-bottom: 20px;
+.card span {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  color: white;
+  background: rgba(0,0,0,0.5);
+  padding: 5px 10px;
+  font-size: 0.9rem;
 }
 
-.hero p {
-  font-size: 18px;
-  margin-bottom: 30px;
-}
-
-/* BOTÃO */
-.btn-primary {
-  background-color: var(--dourado);
-  color: #000;
-  padding: 12px 28px;
-  text-decoration: none;
-  font-weight: bold;
-  border-radius: 4px;
-}
-
-/* DESTAQUE */
-.destaque {
-  padding: 80px 20px;
-  background-color: var(--bege);
+.contact {
+  background: #0f2a1f;
+  color: white;
   text-align: center;
 }
 
-.destaque h2 {
-  font-family: 'Cinzel', serif;
-  color: var(--verde);
-}
-
-.obra {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 40px;
-  margin-top: 40px;
-}
-
-.obra img {
-  width: 420px;
-  border-radius: 8px;
-}
-
-.obra-texto {
-  max-width: 500px;
-  text-align: left;
-}
-
-.obra-texto h3 {
-  color: var(--dourado);
-}
-
-/* SOBRE */
-.sobre {
-  padding: 80px 20px;
-  background-color: var(--verde);
-  color: var(--bege);
+footer {
+  background: #111;
+  color: #aaa;
   text-align: center;
+  padding: 20px;
+  font-size: 0.8rem;
 }
 
-.sobre h2 {
-  font-family: 'Cinzel', serif;
-  color: var(--dourado);
-}
+@media(max-width: 768px) {
+  .split {
+    flex-direction: column;
+  }
 
-.sobre p {
-  max-width: 700px;
-  margin: 10px auto;
-}
-
-/* CONTATO */
-.contato {
-  padding: 80px 20px;
-  text-align: center;
-  background-color: var(--verde-escuro);
-  color: var(--bege);
-}
-
-.contato h2 {
-  font-family: 'Cinzel', serif;
-  color: var(--dourado);
+  .hero h1 {
+    font-size: 2.5rem;
+  }
 }
