@@ -209,9 +209,31 @@ footer {
     text-transform: uppercase;
 }
 
+
+
 /* RESPONSIVIDADE */
 @media (max-width: 768px) {
     h1 { letter-spacing: 10px; font-size: 2.5rem; }
     nav { padding: 20px 5%; }
     nav ul { display: none; } /* Pode ser trocado por menu hambúrguer depois */
+}
+/* Estilos para o controle de exibição */
+.oculto {
+    display: none; /* Esconde totalmente o elemento */
+    opacity: 0;
+    transform: translateY(30px); /* Deixa um pouco abaixo para o efeito de subida */
+}
+
+/* Classe que o JS vai aplicar ao clicar */
+.revelar {
+    display: block !important; /* Força a exibição */
+    animation: fadeUp 1s forwards; /* Chama a animação de 1 segundo */
+}
+
+/* Animação suave de subida e opacidade */
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
