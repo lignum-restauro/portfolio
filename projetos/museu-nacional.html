@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LIGNUM | Museu Nacional</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@200;400;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="../style.css">
+    
+    <style>
+        /* Ajustes de Layout para a Página de História */
+        .header-projeto { 
+            height: 50vh; 
+            background: linear-gradient(rgba(26, 58, 42, 0.8), rgba(26, 58, 42, 0.9)), url('../assets/img/museu-hero.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .conteudo-historia { 
+            max-width: 900px; 
+            margin: -50px auto 100px auto; 
+            background-color: var(--lignum-green);
+            padding: 60px;
+            border: 1px solid rgba(193, 154, 107, 0.2);
+            text-align: left;
+        }
+
+        .texto-narrativo {
+            font-weight: 200;
+            line-height: 2;
+            color: var(--lignum-offwhite);
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+        }
+
+        .ficha-tecnica {
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(193, 154, 107, 0.3);
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+        }
+
+        .item-ficha h4 { color: var(--lignum-gold); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 5px; }
+        .item-ficha p { font-size: 0.9rem; font-weight: 400; }
+
+        .galeria-projeto { 
+            display: grid; 
+            grid-template-columns: 1fr 1fr; 
+            gap: 30px; 
+            margin-top: 60px; 
+        }
+        
+        .foto-detalhe { 
+            width: 100%; 
+            height: 450px; 
+            background: rgba(255,255,255,0.03); 
+            border: 1px solid rgba(193, 154, 107, 0.1); 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            color: var(--lignum-gold); 
+            font-size: 0.6rem; 
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .btn-voltar { margin-bottom: 30px; display: inline-block; padding: 12px 25px; font-size: 0.6rem; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="../index.html" class="logo">Lignum</a>
+        <ul>
+            <li><a href="../index.html#sobre">QUEM SOMOS</a></li>
+            <li><a href="../index.html#projetos">PORTFÓLIO</a></li>
+            <li><a href="../index.html#contato">CONTATO</a></li>
+        </ul>
+    </nav>
+
+    <header class="header-projeto">
+        <h1>Museu Nacional</h1>
+        <p class="subtitle">Rio de Janeiro / RJ</p>
+    </header>
+
+    <section>
+        <div class="conteudo-historia">
+            <a href="../index.html#projetos" class="btn-lignum btn-voltar">← Voltar ao Portfólio</a>
+            
+            <h2>A História do Restauro</h2>
+            
+            <div class="texto-narrativo">
+                <p>O trabalho realizado no Museu Nacional representa um dos maiores desafios técnicos da Lignum. Após o trágico incêndio, a reconstituição das esquadrias monumentais exigiu um estudo aprofundado da caixilharia histórica e o uso de madeiras nobres com certificação de origem.</p>
+                <p>Nossa equipe atuou na fabricação fiel de cada detalhe, garantindo que a nova estrutura respeitasse a volumetria original, unindo técnicas de marcenaria do século XIX com as exigências de segurança e durabilidade do século XXI. Cada encaixe foi executado manualmente para garantir a perenidade do material.</p>
+            </div>
+
+            <div class="ficha-tecnica">
+                <div class="item-ficha">
+                    <h4>Localização</h4>
+                    <p>Quinta da Boa Vista, RJ</p>
+                </div>
+                <div class="item-ficha">
+                    <h4>Intervenção</h4>
+                    <p>Reconstituição Histórica</p>
+                </div>
+                <div class="item-ficha">
+                    <h4>Material</h4>
+                    <p>Madeira de Lei Certificada</p>
+                </div>
+                <div class="item-ficha">
+                    <h4>Ano</h4>
+                    <p>2024 - 2025</p>
+                </div>
+            </div>
+
+            <div class="galeria-projeto">
+                <div class="foto-detalhe">Espaço para Foto: Detalhe do Encaixe</div>
+                <div class="foto-detalhe">Espaço para Foto: Esquadria Monumental</div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        Desenvolvimento Institucional por Ana Karina Carvalho<br>
+        &copy; 2026 Lignum - Engenharia e Restauro.
+    </footer>
+
+</body>
+</html>
