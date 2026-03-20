@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LIGNUM | Preservação de Patrimônio</title>
+    <title>LIGNUM | Engenharia de Restauro</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,53 +17,110 @@
         <a href="#" class="logo">Lignum</a>
         <ul>
             <li><a href="#sobre">QUEM SOMOS</a></li>
-            <li><a href="#projetos">PORTFÓLIO</a></li>
+            <li><a href="#projetos" id="menu-portfolio">PORTFÓLIO</a></li>
             <li><a href="#contato">CONTATO</a></li>
         </ul>
     </nav>
 
     <header>
-      <h1>Lignum</h1>
-    <p class="subtitle">Preservando a Memória da Matéria</p>
-    <button id="ver-portfolio" class="btn-lignum">Ver Portfólio</button>
+        <h1 class="fade-in">Lignum</h1>
+        <p class="subtitle">Preservando a Memória da Matéria</p>
+        <button id="ver-portfolio" class="btn-lignum">Conheça o Legado</button>
     </header>
 
     <section id="sobre">
         <h2>Quem Somos</h2>
         <div class="sobre-conteudo">
-            <p>A Lignum nasce da intersecção entre o rigor da engenharia e a delicadeza da artesania. Nos especializamos na preservação da memória contida na madeira, devolvendo a integridade técnica a monumentos históricos e executando projetos contemporâneos de marcenaria fina.</p>
+            <p>A Lignum nasce da intersecção entre o rigor da engenharia e a delicadeza da artesania. Sob a liderança de Bruno, nos especializamos na preservação da memória contida na madeira, devolvendo a integridade técnica a monumentos históricos e executando projetos contemporâneos de marcenaria fina com materiais de excelência.</p>
         </div>
     </section>
 
     <section id="projetos" class="oculto">
-        <h2>Conheça os Projetos</h2>
+        <h2>Portfólio de Obras</h2>
         <div class="grid-projetos">
+            
             <div class="card-projeto">
-                <div class="placeholder-imagem">Aguardando Imagem</div>
+                <div class="placeholder-imagem">Aguardando Imagem - Museu Nacional</div>
                 <div class="card-info">
-                    <h3>Museu Nacional</h3>
-                    <p>Reconstituição de Esquadrias Monumentais</p>
+                    <h3>Museu Nacional (RJ)</h3>
+                    <p>Reconstituição integral de esquadrias monumentais e caixilharia histórica.</p>
                 </div>
             </div>
 
             <div class="card-projeto">
-                <div class="placeholder-imagem">Aguardando Imagem</div>
+                <div class="placeholder-imagem">Aguardando Imagem - Parque Lage</div>
                 <div class="card-info">
-                    <h3>Parque Lage</h3>
-                    <p>Janelas em Arco de Grande Porte</p>
+                    <h3>Parque Lage (RJ)</h3>
+                    <p>Fabricação e ajuste técnico de janelas de grande porte e estética oitocentista.</p>
                 </div>
             </div>
 
-            </div> </section>
+            <div class="card-projeto">
+                <div class="placeholder-imagem">Aguardando Imagem - Fiocruz</div>
+                <div class="card-info">
+                    <h3>Pombal - Fiocruz (RJ)</h3>
+                    <p>Execução de marcenaria técnica externa: decks, bancos e esquadrias de alta performance.</p>
+                </div>
+            </div>
+
+            <div class="card-projeto">
+                <div class="placeholder-imagem">Aguardando Imagem - Taubaté</div>
+                <div class="card-info">
+                    <h3>Estação Ferroviária de Taubaté</h3>
+                    <p>Restauro e fabricação de esquadrias ferroviárias com fidelidade arquitetônica.</p>
+                </div>
+            </div>
+
+            <div class="card-projeto">
+                <div class="placeholder-imagem">Aguardando Imagem - Villa Santo Aleixo</div>
+                <div class="card-info">
+                    <h3>Villa Santo Aleixo (SP)</h3>
+                    <p>Esquadrias de luxo sob medida com integração de vedação termoacústica.</p>
+                </div>
+            </div>
+
+            <div class="card-projeto">
+                <div class="placeholder-imagem">Aguardando Imagem - UNIRIO</div>
+                <div class="card-info">
+                    <h3>UNIRIO (RJ)</h3>
+                    <p>Fabricação de forros e esquadrias acadêmicas em madeira nobre e estrutural.</p>
+                </div>
+            </div>
+
+            <div class="card-projeto">
+                <div class="placeholder-imagem">Aguardando Imagem - Fazenda</div>
+                <div class="card-info">
+                    <h3>Fazenda Santa Cecília (RJ)</h3>
+                    <p>Fabricação de Lambrequins ornamentais e preservação de detalhamento artístico colonial.</p>
+                </div>
+            </div>
+
+            <div class="card-projeto">
+                <div class="placeholder-imagem">Aguardando Imagem - Casarão</div>
+                <div class="card-info">
+                    <h3>Casarão Barão de Vassouras</h3>
+                    <p>Fabricação de esquadrias históricas e mobiliário fixo personalizado de alto padrão.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
 
     <section id="contato">
-        <h2>Contato</h2>
-        <a href="https://wa.me/seunumeroaqui" class="btn-lignum btn-cta">Solicitar Orçamento</a>
+        <h2>Entre em Contato</h2>
+        <div class="contato-container">
+            <p class="contato-info">contato@lignumrestauro.com.br</p>
+            <p class="contato-info">+55 (21) 00000-0000</p>
+            <div class="contato-acoes">
+                <a href="mailto:contato@lignumrestauro.com.br" class="btn-lignum btn-small">Enviar E-mail</a>
+                <a href="https://wa.me/seunumero" class="btn-lignum btn-cta">Solicitar Orçamento</a>
+            </div>
+        </div>
     </section>
 
     <footer>
         Desenvolvimento Institucional por Ana Karina Carvalho<br>
-        &copy; 2026 Lignum - Todos os direitos reservados.
+        &copy; 2026 Lignum - Engenharia e Restauro.
     </footer>
 
     <script src="script.js"></script>
