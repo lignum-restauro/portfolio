@@ -1,11 +1,11 @@
-/* PALETA DE CORES LIGNUM */
+/* PALETA DE CORES LIGNUM - REFINADA */
 :root {
-    --lignum-green: #1A3A2A;   /* Verde Nobre */
-    --lignum-gold: #C19A6B;    /* Dourado */
-    --lignum-offwhite: #F5F5F0; /* Off-white */
+    --lignum-green: #142E21;   /* Verde Floresta Profundo */
+    --lignum-gold: #D4AF37;    /* Dourado Champanhe Sóbrio */
+    --lignum-offwhite: #F5F5F0; /* Off-white para textos */
 }
 
-/* RESET E CONFIGURAÇÃO BASE */
+/* RESET GLOBAL */
 * { 
     margin: 0; 
     padding: 0; 
@@ -21,6 +21,13 @@ body {
     overflow-x: hidden;
 }
 
+/* RESET DE LINKS (Resolve o problema do azul/roxo) */
+a, a:visited, a:hover, a:active {
+    text-decoration: none;
+    color: inherit;
+    transition: 0.3s;
+}
+
 /* MENU DE NAVEGAÇÃO */
 nav {
     display: flex;
@@ -31,8 +38,8 @@ nav {
     width: 100%;
     top: 0;
     z-index: 1000;
-    background-color: rgba(26, 58, 42, 0.98);
-    border-bottom: 1px solid rgba(193, 154, 107, 0.1);
+    background-color: rgba(20, 46, 33, 0.98);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.15);
 }
 
 .logo {
@@ -40,32 +47,28 @@ nav {
     color: var(--lignum-gold);
     font-size: 1.6rem;
     letter-spacing: 4px;
-    text-decoration: none;
     text-transform: uppercase;
 }
 
 nav ul { display: flex; list-style: none; }
 nav ul li { margin-left: 35px; }
 nav ul li a {
-    text-decoration: none;
-    color: var(--lignum-offwhite);
     font-size: 0.7rem;
     letter-spacing: 2px;
     text-transform: uppercase;
-    transition: 0.3s;
 }
 
 nav ul li a:hover { color: var(--lignum-gold); }
 
-/* SEÇÕES GERAIS - AJUSTE DE SOBREPOSIÇÃO */
+/* SEÇÕES GERAIS */
 section { 
-    padding: 140px 10%; /* Aumentado para não bater no menu fixo */
+    padding: 140px 10% 80px 10%; 
     text-align: center;
-    min-height: auto; /* Permite que a seção cresça com o conteúdo */
-    display: block;   /* Evita o esmagamento do Flexbox */
+    min-height: auto;
+    display: block;
 }
 
-/* SEÇÃO HERO (PÁGINA INICIAL) */
+/* PÁGINA INICIAL (HERO) */
 header {
     height: 100vh;
     display: flex;
@@ -80,7 +83,7 @@ h1 {
     font-family: 'Cinzel', serif; 
     color: var(--lignum-gold);
     font-size: clamp(3rem, 10vw, 6rem);
-    letter-spacing: clamp(8px, 2vw, 20px);
+    letter-spacing: clamp(10px, 2vw, 20px);
     text-transform: uppercase;
     font-weight: 400;
     margin-bottom: 10px;
@@ -95,19 +98,17 @@ h1 {
     opacity: 0.8;
 }
 
-/* BOTÕES */
+/* BOTÕES ESTILIZADOS */
 .btn-lignum {
     background-color: transparent;
     border: 1px solid var(--lignum-gold);
     color: var(--lignum-gold);
     padding: 18px 45px;
-    text-decoration: none;
     text-transform: uppercase;
     letter-spacing: 3px;
     font-size: 0.7rem;
     cursor: pointer;
     transition: 0.4s;
-    font-family: 'Montserrat', sans-serif;
     display: inline-block;
 }
 
@@ -130,14 +131,10 @@ h1 {
     max-width: 800px;
     margin: 0 auto;
     font-size: 1.1rem;
-    color: var(--lignum-offwhite);
 }
 
-/* PORTFÓLIO (LÓGICA REVELAR) */
-.oculto {
-    display: none;
-    opacity: 0;
-}
+/* PORTFÓLIO (REVELAR) */
+.oculto { display: none; opacity: 0; }
 
 .revelar {
     display: block !important;
@@ -166,7 +163,7 @@ h2 {
 }
 
 .card-projeto {
-    border: 1px solid rgba(193, 154, 107, 0.2);
+    border: 1px solid rgba(212, 175, 55, 0.2);
     text-align: left;
     transition: 0.4s;
     background-color: rgba(255,255,255,0.02);
@@ -175,12 +172,13 @@ h2 {
 .card-projeto:hover { 
     border-color: var(--lignum-gold);
     transform: translateY(-5px);
+    background-color: rgba(255,255,255,0.05);
 }
 
 .placeholder-imagem {
     width: 100%;
     height: 280px;
-    background-color: rgba(0,0,0,0.2);
+    background-color: rgba(0,0,0,0.3);
     color: var(--lignum-gold);
     display: flex;
     justify-content: center;
@@ -189,14 +187,14 @@ h2 {
     letter-spacing: 2px;
     padding: 30px;
     text-align: center;
-    border-bottom: 1px solid rgba(193, 154, 107, 0.1);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.1);
 }
 
 .card-info { padding: 30px; }
 .card-info h3 { font-family: 'Cinzel', serif; color: var(--lignum-gold); font-size: 1.1rem; margin-bottom: 12px; }
 .card-info p { font-size: 0.8rem; font-weight: 200; opacity: 0.9; }
 
-/* SEÇÃO CONTATO - CORREÇÃO DE SOBREPOSIÇÃO */
+/* SEÇÃO CONTATO */
 .contato-container {
     max-width: 600px;
     margin: 0 auto;
@@ -204,12 +202,11 @@ h2 {
 }
 
 .contato-info {
-    display: block; /* Garante que fiquem em linhas separadas */
+    display: block;
     font-size: 1.2rem;
-    margin-bottom: 25px; /* Espaço entre email e telefone */
+    margin-bottom: 20px;
     letter-spacing: 2px;
     font-weight: 200;
-    color: var(--lignum-offwhite);
 }
 
 .contato-acoes {
@@ -217,7 +214,7 @@ h2 {
     justify-content: center;
     gap: 25px;
     margin-top: 50px;
-    flex-wrap: wrap; /* Evita quebra de layout em telas pequenas */
+    flex-wrap: wrap;
 }
 
 /* RODAPÉ */
@@ -227,16 +224,17 @@ footer {
     font-size: 0.65rem;
     letter-spacing: 2px;
     text-transform: uppercase;
-    border-top: 1px solid rgba(193, 154, 107, 0.1);
+    border-top: 1px solid rgba(212, 175, 55, 0.1);
     color: var(--lignum-gold);
     opacity: 0.7;
 }
 
-/* RESPONSIVIDADE MOBILE */
+/* RESPONSIVIDADE */
 @media (max-width: 768px) {
     nav { padding: 20px 5%; }
     nav ul { display: none; }
-    h1 { letter-spacing: 10px; }
+    h1 { letter-spacing: 8px; }
     section { padding: 100px 5%; }
     .contato-acoes { flex-direction: column; align-items: center; }
+    .btn-lignum { width: 100%; text-align: center; }
 }
