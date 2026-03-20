@@ -1,27 +1,19 @@
-/* PALETA DE CORES LIGNUM */
 :root {
-    --lignum-green: #1A3A2A;   /* Verde Nobre de Fundo */
-    --lignum-gold: #C19A6B;    /* Dourado para Títulos e Detalhes */
-    --lignum-offwhite: #F5F5F0; /* Off-white para textos de leitura */
+    --lignum-green: #1A3A2A;   /* Verde Nobre */
+    --lignum-gold: #C19A6B;    /* Dourado */
+    --lignum-offwhite: #F5F5F0; /* Off-white */
 }
 
-/* RESET E CONFIGURAÇÃO BASE */
-* { 
-    margin: 0; 
-    padding: 0; 
-    box-sizing: border-box; 
-    scroll-behavior: smooth; 
-}
+* { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
 
 body { 
     background-color: var(--lignum-green);
     color: var(--lignum-offwhite);
     font-family: 'Montserrat', sans-serif; 
-    line-height: 1.6;
     overflow-x: hidden;
 }
 
-/* MENU DE NAVEGAÇÃO */
+/* NAVBAR */
 nav {
     display: flex;
     justify-content: space-between;
@@ -31,34 +23,32 @@ nav {
     width: 100%;
     top: 0;
     z-index: 1000;
-    background-color: rgba(26, 58, 42, 0.95); /* Verde com leve transparência */
-    border-bottom: 1px solid rgba(193, 154, 107, 0.2);
+    background-color: rgba(26, 58, 42, 0.98);
+    border-bottom: 1px solid rgba(193, 154, 107, 0.1);
 }
 
 .logo {
     font-family: 'Cinzel', serif;
     color: var(--lignum-gold);
-    font-size: 1.8rem;
-    letter-spacing: 5px;
+    font-size: 1.6rem;
+    letter-spacing: 4px;
     text-decoration: none;
     text-transform: uppercase;
 }
 
 nav ul { display: flex; list-style: none; }
-nav ul li { margin-left: 40px; }
+nav ul li { margin-left: 35px; }
 nav ul li a {
     text-decoration: none;
     color: var(--lignum-offwhite);
     font-size: 0.7rem;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    font-weight: 400;
+    letter-spacing: 2px;
     transition: 0.3s;
 }
 
 nav ul li a:hover { color: var(--lignum-gold); }
 
-/* SEÇÃO HERO (PÁGINA INICIAL) */
+/* HERO */
 header {
     height: 100vh;
     display: flex;
@@ -66,40 +56,39 @@ header {
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 0 10%;
 }
 
 h1 { 
     font-family: 'Cinzel', serif; 
     color: var(--lignum-gold);
     font-size: clamp(3rem, 10vw, 6rem);
-    letter-spacing: 20px;
+    letter-spacing: 15px;
     text-transform: uppercase;
     font-weight: 400;
-    margin-bottom: 10px;
 }
 
 .subtitle {
     font-weight: 200;
-    letter-spacing: 8px;
+    letter-spacing: 6px;
     text-transform: uppercase;
-    font-size: 0.85rem;
-    color: var(--lignum-offwhite);
-    margin-bottom: 60px;
-    opacity: 0.9;
+    font-size: 0.8rem;
+    margin-bottom: 50px;
+    opacity: 0.8;
 }
 
-/* BOTÃO PRINCIPAL */
+/* BOTÕES */
 .btn-lignum {
     background-color: transparent;
     border: 1px solid var(--lignum-gold);
     color: var(--lignum-gold);
-    padding: 20px 50px;
+    padding: 18px 45px;
     text-decoration: none;
     text-transform: uppercase;
-    letter-spacing: 4px;
+    letter-spacing: 3px;
     font-size: 0.7rem;
-    transition: 0.4s ease;
+    cursor: pointer;
+    transition: 0.4s;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .btn-lignum:hover {
@@ -107,39 +96,42 @@ h1 {
     color: var(--lignum-green);
 }
 
-/* SEÇÕES DE CONTEÚDO */
-section {
-    padding: 120px 10%;
-    text-align: center;
+.btn-cta {
+    background-color: var(--lignum-gold);
+    color: var(--lignum-green);
 }
+
+.btn-small { padding: 15px 30px; font-size: 0.6rem; }
+
+/* SEÇÕES */
+section { padding: 100px 10%; text-align: center; }
 
 h2 {
     font-family: 'Cinzel', serif;
     color: var(--lignum-gold);
-    font-size: 2.2rem;
-    letter-spacing: 6px;
-    margin-bottom: 50px;
+    font-size: 2rem;
+    letter-spacing: 5px;
+    margin-bottom: 40px;
     text-transform: uppercase;
 }
 
 .sobre-conteudo p {
     font-weight: 200;
-    line-height: 2.2;
-    letter-spacing: 1px;
-    max-width: 850px;
+    line-height: 2;
+    max-width: 800px;
     margin: 0 auto;
-    color: var(--lignum-offwhite);
+    font-size: 1.1rem;
 }
 
-/* CONTROLE DE VISIBILIDADE DO PORTFÓLIO */
+/* LÓGICA DE REVELAR PORTFÓLIO */
 .oculto {
     display: none;
     opacity: 0;
 }
 
-.visivel {
+.revelar {
     display: block !important;
-    animation: fadeIn 1.5s forwards;
+    animation: fadeIn 1.2s forwards;
 }
 
 @keyframes fadeIn {
@@ -147,93 +139,42 @@ h2 {
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* GRID DE PROJETOS */
+/* GRID */
 .grid-projetos {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 40px;
-    width: 100%;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
 }
 
 .card-projeto {
-    border: 1px solid rgba(193, 154, 107, 0.3);
+    border: 1px solid rgba(193, 154, 107, 0.2);
     text-align: left;
-    background-color: rgba(255, 255, 255, 0.03); /* Leve brilho no fundo do card */
     transition: 0.4s;
 }
 
-.card-projeto:hover {
-    border-color: var(--lignum-gold);
-    transform: translateY(-5px);
-}
+.card-projeto:hover { border-color: var(--lignum-gold); }
 
 .placeholder-imagem {
     width: 100%;
-    height: 300px;
-    background-color: #12281D; /* Verde ainda mais escuro para o placeholder */
+    height: 250px;
+    background-color: rgba(255,255,255,0.03);
     color: var(--lignum-gold);
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 0.6rem;
-    text-transform: uppercase;
+    font-size: 0.55rem;
     letter-spacing: 2px;
     padding: 20px;
     text-align: center;
+    border-bottom: 1px solid rgba(193, 154, 107, 0.1);
 }
 
-.card-info { padding: 30px; }
-.card-info h3 {
-    font-family: 'Cinzel', serif;
-    color: var(--lignum-gold);
-    font-size: 1.2rem;
-    letter-spacing: 2px;
-    margin-bottom: 10px;
-}
+.card-info { padding: 25px; }
+.card-info h3 { font-family: 'Cinzel', serif; color: var(--lignum-gold); font-size: 1rem; margin-bottom: 10px; }
+.card-info p { font-size: 0.75rem; font-weight: 200; opacity: 0.8; }
 
-.card-info p { 
-    font-weight: 200; 
-    font-size: 0.8rem; 
-    color: var(--lignum-offwhite);
-    opacity: 0.8;
-}
+/* CONTATO */
+.contato-info { font-size: 1.2rem; margin-bottom: 10px; letter-spacing: 2px; font-weight: 200; }
+.contato-acoes { display: flex; justify-content: center; gap: 20px; margin-top: 40px; flex-wrap: wrap; }
 
-/* RODAPÉ */
-footer {
-    padding: 80px;
-    border-top: 1px solid rgba(193, 154, 107, 0.1);
-    color: var(--lignum-gold);
-    text-align: center;
-    font-size: 0.65rem;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-}
-
-
-
-/* RESPONSIVIDADE */
-@media (max-width: 768px) {
-    h1 { letter-spacing: 10px; font-size: 2.5rem; }
-    nav { padding: 20px 5%; }
-    nav ul { display: none; } /* Pode ser trocado por menu hambúrguer depois */
-}
-/* Estilos para o controle de exibição */
-.oculto {
-    display: none; /* Esconde totalmente o elemento */
-    opacity: 0;
-    transform: translateY(30px); /* Deixa um pouco abaixo para o efeito de subida */
-}
-
-/* Classe que o JS vai aplicar ao clicar */
-.revelar {
-    display: block !important; /* Força a exibição */
-    animation: fadeUp 1s forwards; /* Chama a animação de 1 segundo */
-}
-
-/* Animação suave de subida e opacidade */
-@keyframes fadeUp {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
+footer { padding: 60px; text-align: center; font-size: 0.6rem; letter-spacing: 2px; border-top: 1px solid rgba(193, 154, 107, 0.1); color: var(--lignum-gold); }
