@@ -1,24 +1,32 @@
+/* PALETA DE CORES LIGNUM */
 :root {
     --lignum-green: #1A3A2A;   /* Verde Nobre */
     --lignum-gold: #C19A6B;    /* Dourado */
     --lignum-offwhite: #F5F5F0; /* Off-white */
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+/* RESET E CONFIGURAÇÃO BASE */
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+    scroll-behavior: smooth; 
+}
 
 body { 
     background-color: var(--lignum-green);
     color: var(--lignum-offwhite);
     font-family: 'Montserrat', sans-serif; 
+    line-height: 1.6;
     overflow-x: hidden;
 }
 
-/* NAVBAR */
+/* MENU DE NAVEGAÇÃO */
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 30px 10%;
+    padding: 25px 10%;
     position: fixed;
     width: 100%;
     top: 0;
@@ -43,12 +51,21 @@ nav ul li a {
     color: var(--lignum-offwhite);
     font-size: 0.7rem;
     letter-spacing: 2px;
+    text-transform: uppercase;
     transition: 0.3s;
 }
 
 nav ul li a:hover { color: var(--lignum-gold); }
 
-/* HERO */
+/* SEÇÕES GERAIS - AJUSTE DE SOBREPOSIÇÃO */
+section { 
+    padding: 140px 10%; /* Aumentado para não bater no menu fixo */
+    text-align: center;
+    min-height: auto; /* Permite que a seção cresça com o conteúdo */
+    display: block;   /* Evita o esmagamento do Flexbox */
+}
+
+/* SEÇÃO HERO (PÁGINA INICIAL) */
 header {
     height: 100vh;
     display: flex;
@@ -56,22 +73,24 @@ header {
     justify-content: center;
     align-items: center;
     text-align: center;
+    padding: 0 10%;
 }
 
 h1 { 
     font-family: 'Cinzel', serif; 
     color: var(--lignum-gold);
     font-size: clamp(3rem, 10vw, 6rem);
-    letter-spacing: 15px;
+    letter-spacing: clamp(8px, 2vw, 20px);
     text-transform: uppercase;
     font-weight: 400;
+    margin-bottom: 10px;
 }
 
 .subtitle {
     font-weight: 200;
     letter-spacing: 6px;
     text-transform: uppercase;
-    font-size: 0.8rem;
+    font-size: 0.85rem;
     margin-bottom: 50px;
     opacity: 0.8;
 }
@@ -89,6 +108,7 @@ h1 {
     cursor: pointer;
     transition: 0.4s;
     font-family: 'Montserrat', sans-serif;
+    display: inline-block;
 }
 
 .btn-lignum:hover {
@@ -103,27 +123,17 @@ h1 {
 
 .btn-small { padding: 15px 30px; font-size: 0.6rem; }
 
-/* SEÇÕES */
-section { padding: 100px 10%; text-align: center; }
-
-h2 {
-    font-family: 'Cinzel', serif;
-    color: var(--lignum-gold);
-    font-size: 2rem;
-    letter-spacing: 5px;
-    margin-bottom: 40px;
-    text-transform: uppercase;
-}
-
+/* QUEM SOMOS */
 .sobre-conteudo p {
     font-weight: 200;
-    line-height: 2;
+    line-height: 2.2;
     max-width: 800px;
     margin: 0 auto;
     font-size: 1.1rem;
+    color: var(--lignum-offwhite);
 }
 
-/* LÓGICA DE REVELAR PORTFÓLIO */
+/* PORTFÓLIO (LÓGICA REVELAR) */
 .oculto {
     display: none;
     opacity: 0;
@@ -139,42 +149,94 @@ h2 {
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* GRID */
+h2 {
+    font-family: 'Cinzel', serif;
+    color: var(--lignum-gold);
+    font-size: 2.2rem;
+    letter-spacing: 6px;
+    margin-bottom: 60px;
+    text-transform: uppercase;
+}
+
+/* GRID DE PROJETOS */
 .grid-projetos {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 30px;
+    gap: 40px;
 }
 
 .card-projeto {
     border: 1px solid rgba(193, 154, 107, 0.2);
     text-align: left;
     transition: 0.4s;
+    background-color: rgba(255,255,255,0.02);
 }
 
-.card-projeto:hover { border-color: var(--lignum-gold); }
+.card-projeto:hover { 
+    border-color: var(--lignum-gold);
+    transform: translateY(-5px);
+}
 
 .placeholder-imagem {
     width: 100%;
-    height: 250px;
-    background-color: rgba(255,255,255,0.03);
+    height: 280px;
+    background-color: rgba(0,0,0,0.2);
     color: var(--lignum-gold);
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 0.55rem;
+    font-size: 0.6rem;
     letter-spacing: 2px;
-    padding: 20px;
+    padding: 30px;
     text-align: center;
     border-bottom: 1px solid rgba(193, 154, 107, 0.1);
 }
 
-.card-info { padding: 25px; }
-.card-info h3 { font-family: 'Cinzel', serif; color: var(--lignum-gold); font-size: 1rem; margin-bottom: 10px; }
-.card-info p { font-size: 0.75rem; font-weight: 200; opacity: 0.8; }
+.card-info { padding: 30px; }
+.card-info h3 { font-family: 'Cinzel', serif; color: var(--lignum-gold); font-size: 1.1rem; margin-bottom: 12px; }
+.card-info p { font-size: 0.8rem; font-weight: 200; opacity: 0.9; }
 
-/* CONTATO */
-.contato-info { font-size: 1.2rem; margin-bottom: 10px; letter-spacing: 2px; font-weight: 200; }
-.contato-acoes { display: flex; justify-content: center; gap: 20px; margin-top: 40px; flex-wrap: wrap; }
+/* SEÇÃO CONTATO - CORREÇÃO DE SOBREPOSIÇÃO */
+.contato-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
 
-footer { padding: 60px; text-align: center; font-size: 0.6rem; letter-spacing: 2px; border-top: 1px solid rgba(193, 154, 107, 0.1); color: var(--lignum-gold); }
+.contato-info {
+    display: block; /* Garante que fiquem em linhas separadas */
+    font-size: 1.2rem;
+    margin-bottom: 25px; /* Espaço entre email e telefone */
+    letter-spacing: 2px;
+    font-weight: 200;
+    color: var(--lignum-offwhite);
+}
+
+.contato-acoes {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 50px;
+    flex-wrap: wrap; /* Evita quebra de layout em telas pequenas */
+}
+
+/* RODAPÉ */
+footer {
+    padding: 80px 10%;
+    text-align: center;
+    font-size: 0.65rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border-top: 1px solid rgba(193, 154, 107, 0.1);
+    color: var(--lignum-gold);
+    opacity: 0.7;
+}
+
+/* RESPONSIVIDADE MOBILE */
+@media (max-width: 768px) {
+    nav { padding: 20px 5%; }
+    nav ul { display: none; }
+    h1 { letter-spacing: 10px; }
+    section { padding: 100px 5%; }
+    .contato-acoes { flex-direction: column; align-items: center; }
+}
