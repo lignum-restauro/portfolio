@@ -1,24 +1,20 @@
 document.addEventListener('DOMContentLoaded', () => {
-    
-    //console.log("Sistema Lignum - Interface de Luxo Ativada.");
+    // 1. Mapeia os elementos
+    const botaoVerPortfolio = document.querySelector('#ver-portfolio');
+    const secaoProjetos = document.querySelector('#projetos');
 
-    const btnProjetos = document.getElementById('btnProjetos');
-    const secaoProjetos = document.getElementById('projetos');
-
-    // Mágica: Mostra a seção quando o botão for clicado
-    btnProjetos.addEventListener('click', function(e) {
+    // 2. Escuta o clique no botão
+    botaoVerPortfolio.addEventListener('click', () => {
+        // 3. Adiciona a classe que revela a seção
+        secaoProjetos.classList.add('revelar');
         
-        // Se a seção já estiver visível, não faz nada
-        if (secaoProjetos.classList.contains('visivel')) {
-            return;
-        }
-
-        // Adiciona a classe que mostra e anima a seção
-        secaoProjetos.classList.add('visivel');
-        
-        // Pequeno delay para garantir que a animação CSS funcione
+        // 4. Faz a página descer suavemente até os projetos
         setTimeout(() => {
-            console.log("Projetos Revelados.");
-        }, 100);
+            secaoProjetos.scrollIntoView({ behavior: 'smooth' });
+        }, 150);
+
+        // 5. Opcional: Remove o botão após o clique para limpar o visual
+        botaoVerPortfolio.style.opacity = '0';
+        setTimeout(() => { botaoVerPortfolio.style.display = 'none'; }, 500);
     });
 });
