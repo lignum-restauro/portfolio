@@ -1,20 +1,29 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Mapeia os elementos
-    const botaoVerPortfolio = document.querySelector('#ver-portfolio');
+    const btnVerPortfolio = document.querySelector('#ver-portfolio');
+    const menuPortfolio = document.querySelector('#menu-portfolio');
     const secaoProjetos = document.querySelector('#projetos');
 
-    // 2. Escuta o clique no botão
-    botaoVerPortfolio.addEventListener('click', () => {
-        // 3. Adiciona a classe que revela a seção
+    function mostrarPortfolio(e) {
+        if (e) e.preventDefault();
+        
+        // Mostra a seção
         secaoProjetos.classList.add('revelar');
         
-        // 4. Faz a página descer suavemente até os projetos
+        // Scroll Suave
         setTimeout(() => {
             secaoProjetos.scrollIntoView({ behavior: 'smooth' });
-        }, 150);
+        }, 100);
 
-        // 5. Opcional: Remove o botão após o clique para limpar o visual
-        botaoVerPortfolio.style.opacity = '0';
-        setTimeout(() => { botaoVerPortfolio.style.display = 'none'; }, 500);
-    });
+        // Esconde o botão da Hero para limpar o visual
+        if(btnVerPortfolio) {
+            btnVerPortfolio.style.opacity = '0';
+            setTimeout(() => { btnVerPortfolio.style.display = 'none'; }, 500);
+        }
+    }
+
+    // Escuta clique no botão da Home
+    if(btnVerPortfolio) btnVerPortfolio.addEventListener('click', mostrarPortfolio);
+    
+    // Escuta clique no link do Menu
+    if(menuPortfolio) menuPortfolio.addEventListener('click', mostrarPortfolio);
 });
