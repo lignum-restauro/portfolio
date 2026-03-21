@@ -1,11 +1,11 @@
-/* PALETA DE CORES LIGNUM - REFINADA */
+/* PALETA DE CORES REFINADA */
 :root {
-    --lignum-green: #142E21;   /* Verde Floresta Profundo */
-    --lignum-gold: #D4AF37;    /* Dourado Champanhe Sóbrio */
-    --lignum-offwhite: #F5F5F0; /* Off-white para textos */
+    --lignum-green: #142E21;   
+    --lignum-gold: #C19A6B;    /* O Dourado Elegante original */
+    --lignum-offwhite: #F5F5F0; 
 }
 
-/* RESET GLOBAL */
+/* RESET E PADRONIZAÇÃO */
 * { 
     margin: 0; 
     padding: 0; 
@@ -18,17 +18,13 @@ body {
     color: var(--lignum-offwhite);
     font-family: 'Montserrat', sans-serif; 
     line-height: 1.6;
-    overflow-x: hidden;
+    font-weight: 400; /* Peso 400 para melhor leitura em fundos escuros */
 }
 
-/* RESET DE LINKS (Resolve o problema do azul/roxo) */
-a, a:visited, a:hover, a:active {
-    text-decoration: none;
-    color: inherit;
-    transition: 0.3s;
-}
+/* PADRONIZAÇÃO DE LINKS */
+a { text-decoration: none; color: inherit; transition: 0.3s; }
 
-/* MENU DE NAVEGAÇÃO */
+/* NAV PADRONIZADA */
 nav {
     display: flex;
     justify-content: space-between;
@@ -38,37 +34,24 @@ nav {
     width: 100%;
     top: 0;
     z-index: 1000;
-    background-color: rgba(20, 46, 33, 0.98);
-    border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+    background-color: rgba(20, 46, 33, 0.95);
+    border-bottom: 1px solid rgba(193, 154, 107, 0.15);
 }
 
 .logo {
     font-family: 'Cinzel', serif;
     color: var(--lignum-gold);
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     letter-spacing: 4px;
     text-transform: uppercase;
 }
 
 nav ul { display: flex; list-style: none; }
-nav ul li { margin-left: 35px; }
-nav ul li a {
-    font-size: 0.7rem;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-}
-
+nav ul li { margin-left: 30px; }
+nav ul li a { font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; font-weight: 600; }
 nav ul li a:hover { color: var(--lignum-gold); }
 
-/* SEÇÕES GERAIS */
-section { 
-    padding: 140px 10% 80px 10%; 
-    text-align: center;
-    min-height: auto;
-    display: block;
-}
-
-/* PÁGINA INICIAL (HERO) */
+/* SEÇÃO HERO COM IMAGEM (IMPACTO VISUAL) */
 header {
     height: 100vh;
     display: flex;
@@ -77,73 +60,43 @@ header {
     align-items: center;
     text-align: center;
     padding: 0 10%;
+    /* Imagem de fundo com overlay escuro para leitura */
+    background: linear-gradient(rgba(20, 46, 33, 0.85), rgba(20, 46, 33, 0.85)), 
+                url('https://images.unsplash.com/photo-1581428982868-e410dd047a90?q=80&w=2070&auto=format&fit=crop'); 
+    background-size: cover;
+    background-position: center;
 }
 
 h1 { 
     font-family: 'Cinzel', serif; 
     color: var(--lignum-gold);
-    font-size: clamp(3rem, 10vw, 6rem);
-    letter-spacing: clamp(10px, 2vw, 20px);
+    font-size: clamp(3rem, 8vw, 5.5rem);
+    letter-spacing: 15px;
     text-transform: uppercase;
-    font-weight: 400;
+    margin-bottom: 15px;
+}
+
+.hero-tagline {
+    font-size: 0.9rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--lignum-gold);
+    font-weight: 600;
     margin-bottom: 10px;
 }
 
 .subtitle {
-    font-weight: 200;
-    letter-spacing: 6px;
-    text-transform: uppercase;
-    font-size: 0.85rem;
-    margin-bottom: 50px;
-    opacity: 0.8;
+    font-weight: 300;
+    max-width: 600px;
+    font-size: 1rem;
+    opacity: 0.9;
 }
 
-/* BOTÕES ESTILIZADOS */
-.btn-lignum {
-    background-color: transparent;
-    border: 1px solid var(--lignum-gold);
-    color: var(--lignum-gold);
-    padding: 18px 45px;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    font-size: 0.7rem;
-    cursor: pointer;
-    transition: 0.4s;
-    display: inline-block;
-}
-
-.btn-lignum:hover {
-    background-color: var(--lignum-gold);
-    color: var(--lignum-green);
-}
-
-.btn-cta {
-    background-color: var(--lignum-gold);
-    color: var(--lignum-green);
-}
-
-.btn-small { padding: 15px 30px; font-size: 0.6rem; }
-
-/* QUEM SOMOS */
-.sobre-conteudo p {
-    font-weight: 200;
-    line-height: 2.2;
-    max-width: 800px;
+/* ESPAÇAMENTO PADRONIZADO DE SEÇÕES */
+section { 
+    padding: 120px 10%; 
+    max-width: 1400px;
     margin: 0 auto;
-    font-size: 1.1rem;
-}
-
-/* PORTFÓLIO (REVELAR) */
-.oculto { display: none; opacity: 0; }
-
-.revelar {
-    display: block !important;
-    animation: fadeIn 1.2s forwards;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
 }
 
 h2 {
@@ -151,90 +104,66 @@ h2 {
     color: var(--lignum-gold);
     font-size: 2.2rem;
     letter-spacing: 6px;
-    margin-bottom: 60px;
+    margin-bottom: 50px;
     text-transform: uppercase;
 }
 
-/* GRID DE PROJETOS */
+/* CARDS DE PORTFÓLIO - ANIMAÇÃO DE REVEAL */
 .grid-projetos {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 40px;
 }
 
 .card-projeto {
-    border: 1px solid rgba(212, 175, 55, 0.2);
-    text-align: left;
-    transition: 0.4s;
-    background-color: rgba(255,255,255,0.02);
+    border: 1px solid rgba(193, 154, 107, 0.3);
+    background-color: rgba(255, 255, 255, 0.02);
+    opacity: 0; /* Começa invisível para o JS animar */
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
 }
 
-.card-projeto:hover { 
-    border-color: var(--lignum-gold);
-    transform: translateY(-5px);
-    background-color: rgba(255,255,255,0.05);
+.card-projeto.active {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .placeholder-imagem {
-    width: 100%;
-    height: 280px;
+    height: 250px;
     background-color: rgba(0,0,0,0.3);
-    color: var(--lignum-gold);
     display: flex;
-    justify-content: center;
     align-items: center;
-    font-size: 0.6rem;
+    justify-content: center;
+    color: var(--lignum-gold);
+    font-size: 0.65rem;
+    text-transform: uppercase;
     letter-spacing: 2px;
-    padding: 30px;
-    text-align: center;
-    border-bottom: 1px solid rgba(212, 175, 55, 0.1);
 }
 
 .card-info { padding: 30px; }
-.card-info h3 { font-family: 'Cinzel', serif; color: var(--lignum-gold); font-size: 1.1rem; margin-bottom: 12px; }
-.card-info p { font-size: 0.8rem; font-weight: 200; opacity: 0.9; }
+.card-info h3 { font-family: 'Cinzel', serif; color: var(--lignum-gold); font-size: 1.2rem; margin-bottom: 10px; }
+.card-info p { font-size: 0.9rem; font-weight: 400; color: var(--lignum-offwhite); }
 
-/* SEÇÃO CONTATO */
-.contato-container {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px 0;
-}
-
-.contato-info {
-    display: block;
-    font-size: 1.2rem;
-    margin-bottom: 20px;
-    letter-spacing: 2px;
-    font-weight: 200;
-}
-
-.contato-acoes {
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-    margin-top: 50px;
-    flex-wrap: wrap;
-}
-
-/* RODAPÉ */
-footer {
-    padding: 80px 10%;
-    text-align: center;
-    font-size: 0.65rem;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    border-top: 1px solid rgba(212, 175, 55, 0.1);
+/* CONTATO */
+.contato-info { font-size: 1.3rem; margin-bottom: 20px; font-weight: 300; letter-spacing: 2px; }
+.btn-lignum {
+    display: inline-block;
+    border: 1px solid var(--lignum-gold);
     color: var(--lignum-gold);
-    opacity: 0.7;
+    padding: 15px 40px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 0.75rem;
+    margin: 10px;
+    transition: 0.4s;
 }
+
+.btn-lignum:hover { background: var(--lignum-gold); color: var(--lignum-green); }
+
+footer { padding: 60px; text-align: center; border-top: 1px solid rgba(193, 154, 107, 0.1); font-size: 0.7rem; color: var(--lignum-gold); letter-spacing: 2px; }
 
 /* RESPONSIVIDADE */
 @media (max-width: 768px) {
-    nav { padding: 20px 5%; }
-    nav ul { display: none; }
-    h1 { letter-spacing: 8px; }
-    section { padding: 100px 5%; }
-    .contato-acoes { flex-direction: column; align-items: center; }
-    .btn-lignum { width: 100%; text-align: center; }
+    h1 { font-size: 2.5rem; letter-spacing: 8px; }
+    section { padding: 80px 5%; }
 }
