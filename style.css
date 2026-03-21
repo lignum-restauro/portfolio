@@ -1,8 +1,8 @@
-/* PALETA DE CORES REFINADA */
+/* PALETA DE CORES LIGNUM REFINADA */
 :root {
-    --lignum-green: #142E21;   
-    --lignum-gold: #C19A6B;    /* O Dourado Elegante original */
-    --lignum-offwhite: #F5F5F0; 
+    --lignum-green: #142E21;   /* Verde Nobre Profundo */
+    --lignum-gold: #C19A6B;    /* Dourado Elegante (Sóbrio) */
+    --lignum-offwhite: #F5F5F0; /* Off-white para textos */
 }
 
 /* RESET E PADRONIZAÇÃO */
@@ -18,11 +18,8 @@ body {
     color: var(--lignum-offwhite);
     font-family: 'Montserrat', sans-serif; 
     line-height: 1.6;
-    font-weight: 400; /* Peso 400 para melhor leitura em fundos escuros */
+    font-weight: 400; /* Peso 400 para melhor leitura no escuro */
 }
-
-/* PADRONIZAÇÃO DE LINKS */
-a { text-decoration: none; color: inherit; transition: 0.3s; }
 
 /* NAV PADRONIZADA */
 nav {
@@ -48,10 +45,18 @@ nav {
 
 nav ul { display: flex; list-style: none; }
 nav ul li { margin-left: 30px; }
-nav ul li a { font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; font-weight: 600; }
+nav ul li a { 
+    font-size: 0.75rem; 
+    letter-spacing: 2px; 
+    text-transform: uppercase; 
+    font-weight: 600; 
+    color: var(--lignum-offwhite);
+    text-decoration: none;
+}
+
 nav ul li a:hover { color: var(--lignum-gold); }
 
-/* SEÇÃO HERO COM IMAGEM (IMPACTO VISUAL) */
+/* SEÇÃO HERO COM IMAGEM (FOCO NO QUE A EMPRESA FAZ) */
 header {
     height: 100vh;
     display: flex;
@@ -60,9 +65,9 @@ header {
     align-items: center;
     text-align: center;
     padding: 0 10%;
-    /* Imagem de fundo com overlay escuro para leitura */
-    background: linear-gradient(rgba(20, 46, 33, 0.85), rgba(20, 46, 33, 0.85)), 
-                url('https://images.unsplash.com/photo-1581428982868-e410dd047a90?q=80&w=2070&auto=format&fit=crop'); 
+    /* Overlay escuro e NOVA IMAGEM DE MARCENARIA/ESQUADRIAS EM ALTA RES */
+    background: linear-gradient(rgba(20, 46, 33, 0.82), rgba(20, 46, 33, 0.88)), 
+                url('https://images.unsplash.com/photo-1596633606626-d6268840e698?q=80&w=2070&auto=format&fit=crop'); 
     background-size: cover;
     background-position: center;
 }
@@ -70,33 +75,35 @@ header {
 h1 { 
     font-family: 'Cinzel', serif; 
     color: var(--lignum-gold);
-    font-size: clamp(3rem, 8vw, 5.5rem);
-    letter-spacing: 15px;
+    font-size: clamp(3rem, 8vw, 5rem);
+    letter-spacing: clamp(8px, 2vw, 15px);
     text-transform: uppercase;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
+    font-weight: 400;
 }
 
 .hero-tagline {
-    font-size: 0.9rem;
-    letter-spacing: 4px;
+    font-size: 0.85rem;
+    letter-spacing: 5px;
     text-transform: uppercase;
     color: var(--lignum-gold);
     font-weight: 600;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
 
 .subtitle {
     font-weight: 300;
-    max-width: 600px;
-    font-size: 1rem;
-    opacity: 0.9;
+    max-width: 700px;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
 }
 
 /* ESPAÇAMENTO PADRONIZADO DE SEÇÕES */
 section { 
-    padding: 120px 10%; 
+    padding: 100px 10%; 
     max-width: 1400px;
     margin: 0 auto;
+    text-align: center;
 }
 
 h2 {
@@ -108,7 +115,14 @@ h2 {
     text-transform: uppercase;
 }
 
-/* CARDS DE PORTFÓLIO - ANIMAÇÃO DE REVEAL */
+.sobre-conteudo p {
+    font-size: 1.1rem;
+    max-width: 850px;
+    margin: 0 auto;
+    font-weight: 300;
+}
+
+/* GRID E CARDS COM ANIMAÇÃO NO SCROLL (VIA JS) */
 .grid-projetos {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -116,11 +130,20 @@ h2 {
 }
 
 .card-projeto {
-    border: 1px solid rgba(193, 154, 107, 0.3);
+    border: 1px solid rgba(193, 154, 107, 0.2);
     background-color: rgba(255, 255, 255, 0.02);
-    opacity: 0; /* Começa invisível para o JS animar */
+    text-decoration: none;
+    display: block;
+    opacity: 0; 
     transform: translateY(30px);
     transition: all 0.8s ease-out;
+    cursor: pointer;
+}
+
+.card-projeto:hover {
+    border-color: var(--lignum-gold);
+    transform: translateY(-5px) !important;
+    background-color: rgba(255, 255, 255, 0.04);
 }
 
 .card-projeto.active {
@@ -138,14 +161,15 @@ h2 {
     font-size: 0.65rem;
     text-transform: uppercase;
     letter-spacing: 2px;
+    border-bottom: 1px solid rgba(193, 154, 107, 0.1);
 }
 
-.card-info { padding: 30px; }
+.card-info { padding: 30px; text-align: left; }
 .card-info h3 { font-family: 'Cinzel', serif; color: var(--lignum-gold); font-size: 1.2rem; margin-bottom: 10px; }
 .card-info p { font-size: 0.9rem; font-weight: 400; color: var(--lignum-offwhite); }
 
 /* CONTATO */
-.contato-info { font-size: 1.3rem; margin-bottom: 20px; font-weight: 300; letter-spacing: 2px; }
+.contato-info { font-size: 1.3rem; margin-bottom: 15px; font-weight: 300; letter-spacing: 2px; }
 .btn-lignum {
     display: inline-block;
     border: 1px solid var(--lignum-gold);
@@ -156,14 +180,17 @@ h2 {
     font-size: 0.75rem;
     margin: 10px;
     transition: 0.4s;
+    text-decoration: none;
 }
 
 .btn-lignum:hover { background: var(--lignum-gold); color: var(--lignum-green); }
 
 footer { padding: 60px; text-align: center; border-top: 1px solid rgba(193, 154, 107, 0.1); font-size: 0.7rem; color: var(--lignum-gold); letter-spacing: 2px; }
 
-/* RESPONSIVIDADE */
+/* RESPONSIVIDADE MOBILE */
 @media (max-width: 768px) {
+    nav { padding: 20px 5%; }
+    nav ul { display: none; } /* Pode ser trocado por menu hambúrguer depois */
     h1 { font-size: 2.5rem; letter-spacing: 8px; }
     section { padding: 80px 5%; }
 }
