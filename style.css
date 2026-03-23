@@ -1,10 +1,11 @@
-/* PALETA DE CORES LIGNUM - MANTIDA */
+/* PALETA DE CORES LIGNUM - RIGOROSAMENTE MANTIDA */
 :root {
-    --lignum-green: #142E21;   
-    --lignum-gold: #C19A6B;    
-    --lignum-offwhite: #F5F5F0; 
+    --lignum-green: #142E21;   /* Verde Profundo */
+    --lignum-gold: #C19A6B;    /* Dourado Champanhe */
+    --lignum-offwhite: #F5F5F0; /* Off-white */
 }
 
+/* RESET E PADRONIZAÇÃO DE PESO DE FONTE */
 * { 
     margin: 0; 
     padding: 0; 
@@ -16,10 +17,11 @@ body {
     background-color: var(--lignum-green);
     color: var(--lignum-offwhite);
     font-family: 'Montserrat', sans-serif; 
-    line-height: 1.8; /* Aumentado levemente para melhor legibilidade */
-    font-weight: 400; /* PADRÃO UNIFICADO */
+    line-height: 1.8;
+    font-weight: 400; /* Padronizado conforme sua solicitação */
 }
 
+/* NAVEGAÇÃO UNIFICADA */
 nav {
     display: flex;
     justify-content: space-between;
@@ -52,7 +54,8 @@ nav ul li a {
     text-decoration: none;
 }
 
-header {
+/* ESTRUTURA DE CABEÇALHO (HOME E OBRAS) */
+header, .header-projeto {
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -60,43 +63,41 @@ header {
     align-items: center;
     text-align: center;
     padding: 0 10%;
+    /* Imagem local conforme sua escolha */
     background: linear-gradient(rgba(20, 46, 33, 0.8), rgba(20, 46, 33, 0.85)), 
-                url('assets/img/hero-lignum.jpg'); 
+                url('../assets/img/hero-lignum.jpg'); 
     background-size: cover;
     background-position: center;
 }
 
+/* Ajuste para cabeçalho de obra não ser tão alto quanto a home */
+.header-projeto { height: 60vh; }
+
 h1 { 
     font-family: 'Cinzel', serif; 
     color: var(--lignum-gold);
-    font-size: clamp(3rem, 8vw, 5rem);
+    font-size: clamp(2.5rem, 8vw, 5rem);
     letter-spacing: 12px;
     text-transform: uppercase;
     margin-bottom: 10px;
 }
 
-.hero-tagline {
-    font-size: 0.85rem;
-    letter-spacing: 5px;
-    text-transform: uppercase;
-    color: var(--lignum-gold);
-    font-weight: 600;
-    margin-bottom: 5px;
-}
-
 .subtitle {
-    font-weight: 400; /* PADRÃO UNIFICADO PARA NÃO FICAR FINO DEMAIS */
+    font-weight: 400; /* Peso padronizado */
     max-width: 700px;
     font-size: 1.1rem;
     letter-spacing: 1px;
 }
 
-section { 
+/* SEÇÕES E CONTEÚDO */
+section, .conteudo-historia { 
     padding: 100px 10%; 
-    max-width: 1400px;
+    max-width: 1200px;
     margin: 0 auto;
     text-align: center;
 }
+
+.conteudo-historia { text-align: left; } /* Alinhamento para leitura da história */
 
 h2 {
     font-family: 'Cinzel', serif;
@@ -107,14 +108,13 @@ h2 {
     text-transform: uppercase;
 }
 
-/* Garante que o texto do Sobre acompanhe o padrão */
-.sobre-conteudo p {
+.sobre-conteudo p, .texto-narrativo p {
     font-size: 1.1rem;
-    font-weight: 400; /* PADRÃO UNIFICADO */
-    max-width: 850px;
-    margin: 0 auto;
+    font-weight: 400; /* Peso padronizado */
+    margin-bottom: 25px;
 }
 
+/* GRID DE PROJETOS */
 .grid-projetos {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -131,30 +131,10 @@ h2 {
     transition: all 0.8s ease-out;
 }
 
-.card-projeto.active {
-    opacity: 1;
-    transform: translateY(0);
-}
+.card-projeto.active { opacity: 1; transform: translateY(0); }
 
-.placeholder-imagem {
-    height: 250px;
-    background-color: rgba(0,0,0,0.3);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--lignum-gold);
-    font-size: 0.65rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
-
-.card-info { padding: 30px; text-align: left; }
-.card-info h3 { font-family: 'Cinzel', serif; color: var(--lignum-gold); font-size: 1.2rem; margin-bottom: 10px; }
-.card-info p { font-size: 0.9rem; font-weight: 400; color: var(--lignum-offwhite); }
-
-.contato-info { font-size: 1.3rem; margin-bottom: 15px; font-weight: 400; letter-spacing: 2px; }
-
-.btn-lignum {
+/* BOTÕES */
+.btn-lignum, .btn-voltar {
     display: inline-block;
     border: 1px solid var(--lignum-gold);
     color: var(--lignum-gold);
@@ -162,11 +142,22 @@ h2 {
     text-transform: uppercase;
     letter-spacing: 3px;
     font-size: 0.75rem;
-    margin: 10px;
-    transition: 0.4s;
+    margin-top: 20px;
     text-decoration: none;
+    transition: 0.4s;
 }
 
-.btn-lignum:hover { background: var(--lignum-gold); color: var(--lignum-green); }
+.btn-lignum:hover, .btn-voltar:hover { 
+    background: var(--lignum-gold); 
+    color: var(--lignum-green); 
+}
 
-footer { padding: 60px; text-align: center; border-top: 1px solid rgba(193, 154, 107, 0.1); font-size: 0.7rem; color: var(--lignum-gold); letter-spacing: 2px; }
+/* RODAPÉ */
+footer { 
+    padding: 60px; 
+    text-align: center; 
+    border-top: 1px solid rgba(193, 154, 107, 0.1); 
+    font-size: 0.7rem; 
+    color: var(--lignum-gold); 
+    letter-spacing: 2px; 
+}
