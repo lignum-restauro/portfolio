@@ -1,10 +1,11 @@
-/* PALETA DE CORES LIGNUM */
+/* PALETA DE CORES LIGNUM - MANTIDA */
 :root {
     --lignum-green: #142E21;   
     --lignum-gold: #C19A6B;    
     --lignum-offwhite: #F5F5F0; 
 }
 
+/* RESET E PADRONIZAÇÃO */
 * { 
     margin: 0; 
     padding: 0; 
@@ -13,21 +14,21 @@
 }
 
 body { 
-    background-color: var(--lignum-green) !important;
+    background-color: var(--lignum-green);
     color: var(--lignum-offwhite);
     font-family: 'Montserrat', sans-serif; 
     line-height: 1.8;
     font-weight: 400;
 }
 
-/* MATAR O AZUL/ROXO DOS LINKS */
+/* LINKS - MATANDO O AZUL PADRÃO */
 a {
-    color: var(--lignum-gold) !important;
-    text-decoration: none !important;
+    color: inherit;
+    text-decoration: none;
     transition: 0.3s;
 }
 
-/* NAV - CENTRALIZADA E FIXA */
+/* NAVEGAÇÃO */
 nav {
     display: flex;
     justify-content: space-between;
@@ -37,13 +38,29 @@ nav {
     width: 100%;
     top: 0;
     z-index: 1000;
-    background-color: rgba(20, 46, 33, 0.98);
+    background-color: rgba(20, 46, 33, 0.95);
     border-bottom: 1px solid rgba(193, 154, 107, 0.15);
 }
 
-.logo { font-family: 'Cinzel', serif; letter-spacing: 4px; text-transform: uppercase; font-size: 1.5rem; }
+.logo {
+    font-family: 'Cinzel', serif;
+    color: var(--lignum-gold);
+    font-size: 1.5rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
 
-/* HEADER E FUNDO */
+nav ul { display: flex; list-style: none; }
+nav ul li { margin-left: 30px; }
+nav ul li a { 
+    font-size: 0.75rem; 
+    letter-spacing: 2px; 
+    text-transform: uppercase; 
+    font-weight: 600; 
+    color: var(--lignum-offwhite);
+}
+
+/* HEADER - CENTRALIZAÇÃO TOTAL */
 header, .header-projeto {
     height: 100vh;
     display: flex;
@@ -52,55 +69,107 @@ header, .header-projeto {
     align-items: center;
     text-align: center;
     padding: 0 15%;
-    /* O SEGREDO DO FUNDO: Caminho absoluto para a imagem do GitHub */
     background: linear-gradient(rgba(20, 46, 33, 0.8), rgba(20, 46, 33, 0.85)), 
-                url('https://raw.githubusercontent.com/lignum-restauro/lignum-restauro/main/assets/img/hero-lignum.jpg'); 
+                url('assets/img/hero-lignum.jpg'); 
     background-size: cover;
     background-position: center;
 }
 
 .header-projeto { height: 60vh; }
 
-h1, h2 { font-family: 'Cinzel', serif; color: var(--lignum-gold) !important; text-transform: uppercase; }
+h1 { 
+    font-family: 'Cinzel', serif; 
+    color: var(--lignum-gold);
+    font-size: clamp(3rem, 8vw, 5rem);
+    letter-spacing: 12px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
 
-/* QUEM SOMOS - CENTRALIZADO */
+.subtitle {
+    font-weight: 400;
+    max-width: 800px;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+}
+
+/* SEÇÃO QUEM SOMOS - RE-CENTRALIZADA */
 section { 
     padding: 120px 10%; 
     max-width: 1400px;
     margin: 0 auto;
-    text-align: center;
+    text-align: center; /* Garante que tudo dentro da seção seja centralizado */
+}
+
+h2 {
+    font-family: 'Cinzel', serif;
+    color: var(--lignum-gold);
+    font-size: 2.2rem;
+    letter-spacing: 6px;
+    margin-bottom: 50px;
+    text-transform: uppercase;
 }
 
 .sobre-conteudo p {
     font-size: 1.1rem;
+    font-weight: 400;
     max-width: 800px;
-    margin: 0 auto;
+    margin: 0 auto; /* Centraliza o bloco de texto */
     line-height: 2;
 }
 
-/* PORTFÓLIO - CARDS GRANDES E ELEGANTES */
+/* PORTFÓLIO - CARDS MAIORES E ESPAÇADOS */
 .grid-projetos {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-    gap: 60px;
-    padding-top: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Aumentado de 300 para 350px */
+    gap: 50px; /* Mais espaço entre as obras */
+    padding-top: 20px;
 }
 
 .card-projeto {
-    border: 1px solid rgba(193, 154, 107, 0.3) !important;
+    border: 1px solid rgba(193, 154, 107, 0.2);
     background-color: rgba(255, 255, 255, 0.02);
-    transition: 0.4s;
+    opacity: 0; 
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+.card-projeto.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.placeholder-imagem {
+    height: 280px; /* Aumentado para dar mais imponência */
+    background-color: rgba(0,0,0,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--lignum-gold);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
 }
 
 .card-info { padding: 40px; text-align: left; }
-.card-info h3 { font-size: 1.3rem; margin-bottom: 15px; }
-.card-info p { color: var(--lignum-offwhite) !important; font-size: 0.95rem; }
+.card-info h3 { font-family: 'Cinzel', serif; color: var(--lignum-gold); font-size: 1.3rem; margin-bottom: 15px; }
+.card-info p { font-size: 0.95rem; font-weight: 400; color: var(--lignum-offwhite); opacity: 0.9; }
+
+/* CONTATO E BOTÕES */
+.contato-info { font-size: 1.3rem; margin-bottom: 15px; font-weight: 400; letter-spacing: 2px; }
 
 .btn-lignum {
     display: inline-block;
-    border: 1px solid var(--lignum-gold) !important;
+    border: 1px solid var(--lignum-gold);
+    color: var(--lignum-gold);
     padding: 15px 45px;
     text-transform: uppercase;
     letter-spacing: 3px;
     font-size: 0.75rem;
+    margin: 10px;
+    transition: 0.4s;
 }
+
+.btn-lignum:hover { background: var(--lignum-gold); color: var(--lignum-green); }
+
+footer { padding: 80px 10%; text-align: center; border-top: 1px solid rgba(193, 154, 107, 0.1); font-size: 0.7rem; color: var(--lignum-gold); letter-spacing: 2px; }
