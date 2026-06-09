@@ -173,3 +173,58 @@ h2 {
 .btn-lignum:hover { background: var(--lignum-gold); color: var(--lignum-green); }
 
 footer { padding: 80px 10%; text-align: center; border-top: 1px solid rgba(193, 154, 107, 0.1); font-size: 0.7rem; color: var(--lignum-gold); letter-spacing: 2px; }
+
+/* --- ADICIONADO PARA AJUSTAR A GALERIA DE FOTOS DAS OBRAS --- */
+
+.galeria-obra {
+    padding: 60px 10% 120px 10%;
+    text-align: center;
+    max-width: 1200px; /* Limita o tamanho máximo da seção inteira */
+    margin: 0 auto;    /* Centraliza a galeria na tela */
+}
+
+.sub-galeria {
+    margin-bottom: 50px;
+    font-size: 1rem;
+    opacity: 0.8;
+    color: var(--lignum-offwhite);
+}
+
+.grid-detalhes {
+    display: flex;       /* Alinha as fotos lado a lado */
+    gap: 40px;           /* Espaço elegante entre as duas imagens */
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;     /* Faz as fotos quebrarem uma para baixo da outra no celular */
+}
+
+.foto-tecnica {
+    flex: 1;
+    min-width: 280px;    /* Garante que não esmague em telas médias */
+    max-width: 480px;    /* DOMA A FOTO: Impede que ela fique gigantesca */
+    text-align: left;
+}
+
+.foto-tratada {
+    width: 100%;
+    height: 360px;       /* Mantém uma altura imponente, mas perfeitamente controlada */
+    object-fit: cover;   /* Faz o corte inteligente para a imagem não distorcer */
+    filter: grayscale(100%) contrast(125%); /* Transforma a foto do celular em registro técnico */
+    border: 1px solid rgba(193, 154, 107, 0.3);
+    transition: 0.5s ease;
+}
+
+/* O efeito sofisticado de revelação ao passar o mouse */
+.foto-tratada:hover {
+    filter: grayscale(15%) contrast(110%); 
+    border-color: var(--lignum-gold);
+}
+
+.foto-tecnica p {
+    font-size: 0.85rem;
+    color: var(--lignum-gold);
+    margin-top: 15px;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 1px;
+    line-height: 1.5;
+}
