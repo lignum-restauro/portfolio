@@ -298,21 +298,50 @@ h2 {
 /* ==========================================================================
    CONTATO, BOTÕES E FOOTER
    ========================================================================== */
-.contato-info { font-size: 1.3rem; margin-bottom: 15px; font-weight: 400; letter-spacing: 2px; }
-
-.btn-lignum {
-    display: inline-block;
-    border: 1px solid var(--lignum-gold);
-    color: var(--lignum-gold);
-    padding: 15px 45px;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    font-size: 0.75rem;
-    margin: 10px;
-    transition: 0.4s;
+/* Container que envolve os dois botões */
+.botoes-contato {
+    display: flex;
+    justify-content: center; /* Centraliza os botões na tela */
+    gap: 20px;               /* Cria o espaçamento perfeito entre eles */
+    margin-top: 2rem;
+    flex-wrap: wrap;         /* Garante que se adapte a celulares sem quebrar o layout */
 }
 
-.btn-lignum:hover { background: var(--lignum-gold); color: var(--lignum-green); }
+/* Estilo individual de cada botão do rodapé */
+.btn-contato-rodape {
+    display: inline-block;
+    padding: 1rem 2rem;
+    border: 1px solid var(--lignum-gold); /* Usando a variável padrão */
+    color: var(--lignum-gold);            /* Usando a variável padrão */
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+/* Efeito ao passar o mouse - CHAVE FECHADA E COR CORRIGIDA */
+.btn-contato-rodape:hover {
+    background-color: var(--lignum-gold);
+    color: var(--lignum-green); /* Inverte usando as cores oficiais da identidade */
+}
+
+/* Classe global para botões genéricos estilo Lignum (caso use em outras páginas) */
+.btn-lignum {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 1px solid var(--lignum-gold);
+    color: var(--lignum-gold);
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+}
+
+.btn-lignum:hover { 
+    background: var(--lignum-gold); 
+    color: var(--lignum-green); 
+}
 
 footer { 
     padding: 80px 10%; 
