@@ -161,6 +161,19 @@ h2 {
     letter-spacing: 3px;
 }
 
+/* Ajuste para imagens de capa de cards inteiros (como o de Coordenação) */
+.foto-capa-card {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%) contrast(125%);
+    transition: filter 0.5s ease;
+}
+
+.card-projeto:hover .foto-capa-card {
+    filter: grayscale(15%) contrast(110%);
+}
+
 .card-info { padding: 40px; text-align: left; }
 .card-info h3 { font-family: 'Cinzel', serif; color: var(--lignum-gold); font-size: 1.3rem; margin-bottom: 15px; }
 .card-info p { font-size: 0.95rem; font-weight: 400; color: var(--lignum-offwhite); opacity: 0.9; }
@@ -174,9 +187,9 @@ h2 {
     padding: 50px;
     border-radius: 4px;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
-    text-align: left;                         
+    text-align: left;                          
     max-width: 900px;
-    margin: -80px auto 0 auto;                /* Efeito flutuante sobre o cabeçalho */
+    margin: -80px auto 0 auto;                 /* Efeito flutuante sobre o cabeçalho */
     position: relative;
     z-index: 10;
 }
@@ -191,7 +204,7 @@ h2 {
 }
 
 .texto-narrativo p {
-    color: #2b4737;                           /* Tom legível e elegante */
+    color: #2b4737;                            /* Tom legível e elegante */
     font-size: 1.05rem;
     line-height: 1.9;
     margin-bottom: 25px;
@@ -238,6 +251,58 @@ h2 {
     font-size: 0.95rem;
     font-weight: 600;
     margin: 0;
+}
+
+/* ==========================================================================
+   CONEXÕES INTERNAS - HUB DE COORDENAÇÃO DE OBRAS
+   ========================================================================== */
+.obras-vinculadas {
+    margin-top: 50px;
+    padding-top: 40px;
+    border-top: 1px solid rgba(20, 46, 33, 0.1);
+    text-align: center;
+}
+
+.obras-vinculadas h3 {
+    font-family: 'Cinzel', serif;
+    color: var(--lignum-green);
+    font-size: 1.4rem;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.desc-vinculo {
+    font-size: 0.95rem;
+    color: #2b4737;
+    margin-bottom: 30px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.links-coordenacao {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* Botões minimalistas para os atalhos das páginas internas */
+.btn-lignum-mini {
+    display: inline-block;
+    padding: 0.8rem 1.8rem;
+    border: 1px solid var(--lignum-green);
+    color: var(--lignum-green);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.btn-lignum-mini:hover {
+    background-color: var(--lignum-green);
+    color: var(--lignum-offwhite);
+    transform: translateY(-2px);
 }
 
 /* ==========================================================================
@@ -321,7 +386,7 @@ h2 {
     transition: all 0.3s ease;
 }
 
-/* Efeito ao passar o mouse - CHAVE FECHADA E COR CORRIGIDA */
+/* Efeito ao passar o mouse */
 .btn-contato-rodape:hover {
     background-color: var(--lignum-gold);
     color: var(--lignum-green); /* Inverte usando as cores oficiais da identidade */
